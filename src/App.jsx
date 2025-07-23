@@ -8,6 +8,7 @@ function App() {
     <Provider store={store}>
       <h1>React - Redux</h1>
       <AddCustomer />
+      <ViewCustomer />
     </Provider>
   );
 }
