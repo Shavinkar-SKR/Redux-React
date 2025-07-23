@@ -1,16 +1,18 @@
 import { useState } from "react";
-import ViewCustomer from "./ViewCustomer";
+import { addCustomer as addCustomerAction } from "./slices/customerSlice";
+import { useDispatch } from "react-redux"; //A function that sends (dispatches) an action to the reducer.
 
 function AddCustomer() {
   const [input, setInput] = useState("");
-  const [customer, setCustomers] = useState([]);
+  //   const [customer, setCustomers] = useState([]);
+  const dispatch = useDispatch();
 
   function addCustomer() {
     if (input) {
-      setCustomers((prevCustomers) => [...prevCustomers, input]);
+      //   setCustomers((prevCustomers) => [...prevCustomers, input]);
+      dispatch(addCustomerAction(input));
       setInput("");
     }
-
     console.log(customer);
   }
 
@@ -23,7 +25,6 @@ function AddCustomer() {
         onChange={(e) => setInput(e.target.value)}
       />
       <button onClick={addCustomer}>Add</button>
-      <ViewCustomer customers={customer} />
     </>
   );
 }
