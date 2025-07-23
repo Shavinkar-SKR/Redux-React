@@ -12,8 +12,12 @@ const customerSlice = createSlice({
       //reducer function to handle adding a new customer
       state.push(action.payload);
     },
+    deleteCustomer: (state, action) => {
+      let deleteIndex = action.payload;
+      return state.filter((val, index) => index !== deleteIndex);
+    },
   },
 });
 
-export const { addCustomer } = customerSlice.actions; //exporting the generated action creator so components can dispatch it
+export const { addCustomer, deleteCustomer } = customerSlice.actions; //exporting the generated action creator so components can dispatch it
 export default customerSlice.reducer; //exporting the reducer to be used in the redux store
