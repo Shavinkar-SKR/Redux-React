@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit"; //createSlice fucntion helps to 
 const initialState = []; //initial state of the customers slice
 
 const customerSlice = createSlice({
-  name: "customers", //a name for this state
+  name: "customer", //a name for this state
   initialState, //setting the initial state of the customer's array here which is empty
   reducers: {
     addCustomer: (state, action) => {
