@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit"; //importing configureStore fr
 //This function is used create  a Redux store with good default settings
 
 export const store = configureStore({
-  devTools: true, //enables redux Devtools for debugging in the browser
+  devTools: true, //enables redux Devtools for debugging in the browser while in development, in production set to false then it hides the state changes for security.
   reducer: {
     customers,
   },
